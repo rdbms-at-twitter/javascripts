@@ -1,0 +1,107 @@
+<html>
+  <body>
+
+<h1> Sample Object </h1>
+
+<div>1個目のDIVです。</div>
+<div>2個目のDIVです。</div>
+<div>3個目のDIVです。</div>
+
+    <script>
+    //これはDOMの処理の確認で、コノページの2個目のDIVを表示します。
+      // alert(document.getElementsByTagName("div")[1].firstChild.nodeValue);
+    //これはDOMの処理の確認で、コノページの2個目のDIVをDOMで書き換えしてます。
+      // document.getElementsByTagName("div")[1].firstChild.nodeValue="DOMで書き換え処理";
+
+    //これはDOMの処理の確認で、コノページの複数のDIVをLOOPで書き換えます。
+　　     var dt=document.getElementsByTagName("div");
+　　　   //for(var i=0; i<dt.length; i++){
+         for(let i=0; i<dt.length; i++){
+         dt[i].firstChild.nodeValue="DIVをまとめて書き換えました";
+         }
+
+
+    </script>
+
+<h2>  One Object </h2>
+
+    <script type="text/javascript">
+      function Seito(_namae, _seiseki) {
+          this.namae = _namae;
+          this.seiseki = _seiseki;
+      } //コンストラクタの終わりのカッコです。
+      var kumi=[];
+      kumi[0]=new Seito("山田太郎",95);
+      kumi[1]=new Seito("田中一郎",73);
+      kumi[2]=new Seito("鈴木花子",86);
+      kumi[3]=new Seito("杉山真也",80);
+      kumi[4]=new Seito("佐藤博史",79);
+      var total=0;
+      for(i=0;i<kumi.length;i++){
+          document.write(kumi[i].namae+"："+kumi[i].seiseki+"点<br>");
+          total+=kumi[i].seiseki;
+      } //for文の終わりのカッコです
+
+      var heikin = total/kumi.length;
+      document.write("平均点 =" +heikin);
+
+
+      // 以下、平均点の計算を別のLOOPで算出した場合....
+      //var total=0;
+      //for (i=0;i<kumi.length;i++) {
+      //  total+=kumi[i].seiseki;
+      //}
+      //
+      //var heikin = total/kumi.length;
+      //document.write("平均点 =" +heikin);
+
+
+// function Seito(_namae, _seiseki) {
+// ここが、生徒コンストラクタ（関数）です。「function コンストラクタ名()」でコンストラクタを作ることができます。functionなので、コンストラクタを使ってオブジェクトを作るときに引数を渡すことができます。生徒コンストラクタは、「名前（_namae）」と「成績（_seiseki）」の2つの引数を受け取るようにしてあります。引数に「_」（アンダーバー）をつけているのは、後で出てくるオブジェクトのプロパティ名とごっちゃにならないためです。
+
+
+// this.namae = _namae;
+// 生徒コンストラクタの名前プロパティに、引数の_namaeを使います。「this」というのは、コンストラクタによって作られたオブジェクト自身を表しています。無理やり日本語にしてみると、「この（コンストラクタを使って作られたオブジェクト）のnamaeプロパティは、_namae」のようなイメージです。
+
+
+//var kumi=[];
+//生徒オブジェクトを入れておくための、kumi（組）配列を作っています。後から中身を入れていくので、とりあえず配列の中身は空にしてあります。
+
+
+//kumi[0]=new Seito("山田太郎",95);
+//先ほどの生徒コンストラクタを使って作った生徒オブジェクトを配列の1番目に入れます。
+// コンストラクタの使い方はとても簡単です。「new コンストラクタ名()」とするだけで、コンストラクタを使ってオブジェクトを作ることができます。生徒コンストラクタ（Seito）は、「_namae」と「_seiseki」の引数を受け取って、オブジェクトのプロパティにするので、オブジェクトを作るときに、名前と成績を入力します。
+
+//for(i=0;i<kumi.length;i++){
+//for文を使って、kumi配列の中身を順番に表示します。「kumi.length」とすることで、kumi配列の長さが分かる。
+
+
+// document.write(kumi[i].namae+"："+kumi[i].seiseki+"点");
+// kumi[0]のように配列を指定すれば、kumi配列の中身のオブジェクトを使うことができます。「kumi[0].namae」や「kumi[0].seiseki」と書けばプロパティを見ることができます。ここでは、for文で置き換えてkumi[i]とすることで、配列の中身の生徒オブジェクトを順番に表します。
+
+// http://www.atmarkit.co.jp/ait/articles/1011/29/news109_2.html
+
+    </script>
+
+<h2>  Object for Each </h2>
+
+    <script type="text/javascript">
+	var seito1=new Object();
+	seito1.namae="山田太郎";
+	seito1.seiseki=95;
+	var seito2=new Object();
+	seito2.namae="田中一郎";
+	seito2.seiseki=73;
+	var seito3=new Object();
+	seito3.namae="鈴木花子";
+	seito3.seiseki=86;
+	document.write(seito1.namae+"："+seito1.seiseki+"点<br>");
+	document.write(seito2.namae+"："+seito2.seiseki+"点<br>");
+	document.write(seito3.namae+"："+seito3.seiseki+"点<br>");
+    </script>
+
+
+
+
+  </body>
+</html>

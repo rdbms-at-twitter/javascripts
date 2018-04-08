@@ -1,0 +1,72 @@
+<html>
+  <body>
+    <div id="main">
+      <div id="main_text">メインのdivタグです</div>
+    </div>
+    <div id="sub">
+      <div id="sub_text">サブのdivタグです</div>
+    </div>
+    <script>
+    // 　HTMLでは、「ひとつのドキュメント中に、複数の要素が同じidを持つことは許されない」と決まっているので、
+    //   文法的に間違った書き方をしなければ、このような階層になっているHTMLでも直接参照することができます。
+    //   document.getElementsByTagName("div")では確認が大変ですが、document.getElementById("id名")であれば、
+　　//   idで識別できるのでかなり便利。
+    
+    //   但し、HTML内の大量の要素を処理する場合は、「getElementById」で1個ずつのidを処理するより、
+    //  「getElementsByTagName」で配列化された要素を、ループで一気に処理するほうが楽なこともあります。
+
+    //   alert(document.getElementById("main_text").firstChild.nodeValue);
+         document.getElementById("sub_text").firstChild.nodeValue="DOMで書き換え処理";
+
+
+
+
+   // 画像を回転させるための角度を入れる変数rを用意しています。最初は0
+       // var r=0;
+   // 「document.images」というを使うと、HTML上の<img>タグで表示されている画像が配列化できます。
+       //var es = document.images;
+   // 配列の画像をループで一気に処理するために、画像配列内の画像の数を変数lnに入れています。
+   // 配列の長さ（数）は「配列名.length」で調べることができます
+       //  var ln = es.length;
+
+   // 「setInterval」はタイマー関数、決まった時間ごとに()の中の関数を繰り返し実行。
+　 //  「setTimeout」は「setInterval」と違って、決まった時間が来たら一度だけ()の中の関数を実行
+   //  setInterval('kansuu()',1000);というような書き方もできる。
+       // setInterval(
+   //   無名関数。ここだけでしか使わない関数。
+       //  function(){
+　 //  変数lnには、HTMLで使われている画像の数が入っている
+       //    for (var i = 0; i < ln; i++) {
+   //  「es[0]」なら、最初の<img>タグ
+       //    var cs= es[i].style;
+   //  画像を自由に動かすために、スタイルシートで画像の表示位置を「absolute」にしてい。
+       //    cs.position = 'absolute';
+　 //  画像を配置するために、画像毎に角度を変えています。
+       //    var red = i*10+Math.PI * r/180;
+       //    cs.top= 200*Math.cos(red)+200;
+       //    cs.left= 200*Math.sin(red)+200;
+   //  }
+    // すべての画像を処理し終わったら、画像を回転させるために1行目で設定した変数rに角度を足しています
+   //  r+=5
+   // 無名関数（function()）の終わりのカッコと、後ろの「,5」は「setInterval」が関数を実行する間隔です。
+  //   },5
+//     );
+   //これがないと、アドレスバーに貼りつけられたブックマークレットがリンクとして実行されてしまいます。
+//    void(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

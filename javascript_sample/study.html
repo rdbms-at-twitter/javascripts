@@ -1,0 +1,314 @@
+<html>
+  <body onload="alert('いらっしゃいませ。')"> 
+
+    <script type="text/javascript">
+      //基本的なJavascriptの処理
+      document.write("Javascriptの基本を確認する為のページ<br><br>");
+      document.write(46+14 +"<br>");
+      document.write("6+4="+(6+4) +"<br>");
+      // ()でくくらないと文字列として扱われtしまう。
+      document.write("6+4="+6+4 +"<br>");
+      // ()でくくらなくても、JavaScriptでも算数のルールと同じく、
+　　　// 四則演算（＋−×÷）の混ざった計算では、掛け算・割り算を足し算・引き算より先に計算します。
+      // その為、Xや÷は計算されてますが、計算部分を（ ）に入れるようにすると安全です。
+　　　document.write("6*4="+6*4 +"<br>");
+　　　document.write("6*4="+(6*4)+"<br>");
+    </script>
+
+    <br>
+    <p> イベント（event）</p>
+    <p>イベントとしてHTMLタグの中にJavaScriptを書くときにはscriptタグは不要<br>
+       警告ダイアログの「表示中はJavaScriptの実行を一時停止する」
+    </p>
+　　<input type="button" value="クリック処理の例!" onclick="alert('ボタンがクリックされました。')">
+    <br><br>
+    <p> マウスオーバー処理の例 </p><br>
+    <input type="button" value="ボタン" onmouseover="this.value='マウスオーバー'" onmouseout="this.value='マウスアウト'">
+    <br>
+    <p>マウスアップとマウスダウンの例</p><br>
+    <input type="button" value="ボタン" onmousedown="this.value='マウスダウン'" onmouseup="this.value='マウスアップ'">
+    <br>
+    <p>ダブルクリップ処理の例</p>
+    <input type="button" value="ボタン" onclick="this.value='クリック'" ondblclick="this.value='ダブルクリック'">
+    <br><br>
+    <p> onloadとonunloadの確認は、http://192.168.56.200/tables/study-example.htmlを参照</p>
+    <br>
+    <p>Windowsの右クリックで出るメニューのことをコンテキストメニューといいます。<br>
+    oncontextmenu（オンコンテキストメニュー）は、右クリックで出てくるメニュー<br>
+    を表示したことをきっかけにするイベントです。</p>
+    <p> 右クリック禁止については、http://192.168.56.200/tables/study-example2.htmlを参照</p>
+    <br> 
+
+    <br>
+    <p>メアドコピペの禁止</P>
+    <p>
+    メールアドレス：<input type="text" oncopy="alert('コピー禁止！'); return false"
+      oncut="alert('カットも禁止！'); return false"><br>
+    メールアドレス（確認用）：<input type="text" onpaste="alert('ペースト禁止！'); return false">
+    </p>
+    <p>テキストフィールドにoncopyと書くことで「コピーされたとき」というイベントが使えます。<br>
+       oncontextmenuのときと同じく、「コピーされたことをなかったことに」したいのでreturn falseもセットで使います。</p>
+    <br>
+ 
+    <p> マウスオーバーと画像の表示切替例</p>   
+    <a href="http://variable.jp/">
+    <img src="1.svg"  onmouseover="src='2.svg'" onmouseout="src='1.svg'">
+    </a>
+    <br>
+
+    <p> 変数の例 </p>
+    <p>気を付けなくてはいけない点として、英字の小文字と大文字は区別されます</p>
+<p>-----------------以下、予約語------------------</p>
+<p>
+abstract,debugger,finally,int,short,typeof,boolean,default,float,interface,static,var,break,delete,for,long<br>
+super,void,byte,do,function,native,switch,volatile,case,double,goto,new,synchronized,while,catch,else,if,package<br>
+this,with,char,enum,implements,private,throw,class,export,import,protected,throws,const,extends,in,public,transient<br>	　
+continue,final,instanceof,return,try<br>
+</p>
+<p>-----------------------------------------------</p>
+    <script type="text/javascript">
+      var a=10;
+      var b=8;
+      var c="日本語";
+      var d="と英語が出来ます";
+
+      document.write(a+b+"<br>");
+　　　document.write(c+d);
+
+    </script>
+    <br>
+
+    <p> Function(関数)の例<br>
+    JavaScriptで関数を使うには、最初にfunctionと書きます。続いて、関数に名前を付けます。<br>
+    関数の名前のルールは、変数と同じです。<br>
+    英字の「a～z、A～Z」、数字「0～9」、「_（アンダースコア）」を使うことができます。<br>
+   「2bai」のように名前の最初に数字を付けることはできません。<br>
+     名前の次に、(x)と書いてあります。これは、関数の入り口になります。<br>
+    どんな数が入るか分からないので、数字の代わりにxという変数が書いてあります。<br>
+    関数の入り口に使う変数のことを、特別に引数（ひきすう）と呼びます。<br>
+    引数として入り口の変数を用意するときに、varを付ける必要はありません。<br>
+    {」は関数の始まりを表しています。最後の「}」と対応していて、この{ }に囲まれた部分が関数の中身になります。<br>
+    var yのyは変数です。varは変数に名前を付ける時に使う約束でしたね。最後に付いている「;」はJavaScriptの区切りです。<br>
+    関数を使うときに、" "（ダブルクオーテーション）でくくる必要はありません。 
+    </p>
+    <script type="text/javascript">
+    function nibai(x) {
+    var y=x*2;
+    return y;
+    }
+    document.write(nibai(4));
+    </script>
+
+    <p>関数の応用例<br>
+    テキストフィールドを作って、numという名前を付けています。テキストフィールドに名前（id）を付けて、<br>
+    JavaScriptで「num.value」と書けば、このテキストフィールドに入力されている値（value）を使えるようになります。<br>
+    </p>
+
+    <script type="text/javascript">
+    function nibai(x) {
+    var y=x*2;
+    return y;
+    }
+    </script>
+    <input type="text" id="num">
+    <input type="button" value="2倍にする" onclick="alert(nibai(num.value))">
+
+
+    <p>関数の応用例2<br>
+    文字を数字としてJavaScriptに計算させるために「Number()」を使います。
+    </P>
+    <script type="text/javascript">
+    function tashizan(a,b) {
+    var c=Number(a)+Number(b);
+    // var c=(a-0)+(b-0); やvar c=(a*1)+(b*1);と書くことでNumber関数を利用しないこともできます。
+    return c;
+    }
+    </script>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="button" value="足し算する" onclick="alert(tashizan(num1.value,num2.value))">
+
+    <br>
+    <p> if文の例<br>
+    IDは被ってはいけないのでここではshingouというIDを入力項目に設定しています。
+    </p>
+    
+    <script type="text/javascript">
+     function handan(shadanki){
+       //if文では「if()」のようにカッコの中に判断するための条件を書きます。
+       if(shadanki == 1){
+       //「document.getElementById("").innerHTML」は、("")部分の名前（id）のタグの中身（HTML）を書き換えてしまうというJavaScriptです
+          document.getElementById("kekka").innerHTML = "止まる";
+       // 「if文の条件に合わなかったとき」
+       } else {
+          document.getElementById("kekka").innerHTML = "進む";
+       }
+     }
+    </script>
+    <input type="text" id="shingou">
+    <input type="button" value="判断" onclick="handan(shingou.value)">
+    <div id="kekka">ここに結果を表示します</div>
+
+
+    <p> if文の例2 </p>
+
+    <script type="text/javascript">
+     function handan2(shadanki2){
+       if(shadanki2 != 0){
+          document.getElementById("kekka2").innerHTML = "止まる";
+       } else {
+          document.getElementById("kekka2").innerHTML = "進む";
+       }
+      }
+    </script>
+    <input type="text" id="shingou2">
+    <input type="button" value="判断" onclick="handan2(shingou2.value)">
+    <div id="kekka2">ここに判断結果を表示します</div>
+
+
+
+    <p> if文の例3 - いくつかの条件 <br>
+        6以上：止まる、4以上：ダッシュ、それ以外は進む
+    </p>
+
+
+        <script type="text/javascript">
+      function handan3(shadanki3){
+        if(shadanki3 > 6){
+           document.getElementById("kekka3").innerHTML = "止まる";
+        } else if(shadanki3 >= 4) {
+           document.getElementById("kekka3").innerHTML = "ダッシュ";
+        } else {
+           document.getElementById("kekka3").innerHTML = "進む";
+        }
+      }
+    </script>
+    <input type="text" id="Shingou3">
+    <input type="button" value="判断" onclick="handan3(Shingou3.value)">
+    <div id="kekka3">ここに判断結果を表示します</div>
+
+   <p> if文の例4 - さらに複数の条件を追加 i
+       この文は｜｜とpain.value == 1を利用して短くすることが可能です。
+   </p>
+
+    <script type="text/javascript">
+      function handan4(shadanki4){
+        if(shadanki4 >= 4){
+          if(shadanki4 > 6) {
+            document.getElementById("kekka4").innerHTML = "止まる";
+          } else if (pain.value == 0) {
+            document.getElementById("kekka4").innerHTML = "ダッシュ";
+          } else {
+            document.getElementById("kekka4").innerHTML = "止まる";
+	  }
+        } else {
+           document.getElementById("kekka4").innerHTML = "進む";
+        }
+      }
+    </script>
+    <select id="pain">
+      <option value=0 selected="selected">元気</option>
+      <option value=1>足が痛い</option>
+    </select>
+    <input type="text" id="Shingou4">
+    <input type="button" value="判断" onclick="handan4(Shingou4.value)">
+    <div id="kekka4">ここに判断結果を表示します</div>
+
+
+    <p> While文の例 <br>
+        while（繰り返す条件）{繰り返したい動作}
+    </p>
+    
+    <script type="text/javascript">
+    //カウント用の変数iを用意します。
+      var i=0;
+      while(i<10){
+        document.write("WHILE LOOP繰り返し"+(i+1)+"回目<br>");
+    //JavaScriptの「=」は「イコール」ではなく、代入や割り当ての意味になります
+　　//条件などで「イコール」を表すときは「==」と、2個続けて「=」を書きます）。
+
+        i=i+1;
+      } //While Loopの終わり
+    </script>
+
+
+    <p> for loopの例 <br>
+    "for（カウント用変数の用意;繰り返す条件;カウント用変数の変更）{繰り返したい動作}"</p>
+    <br>
+
+    <script type="text/javascript">
+      //forがループの始点になります
+      //while文のときは、while文と別にカウント用の変数iを用意しましたが、for文では文の中に変数を用意します。
+      //「var i=0;」が変数を用意している部分です。
+      //「i<10;」が繰り返す条件の部分です。
+      //「i++」は、1回ループする毎に、カウント用変数の変更を行っている部分
+      for(var i=0;i<10;i++){
+      document.write("FOR LOOP繰り返し"+(i+1)+"回目<br>");
+      }
+    </script>
+
+    <p> do while文の例<br>
+    do{ 繰り返したい動作 }while（繰り返す条件);<br>
+    </p>
+      <script type="text/javascript">
+      var i=0;
+      do{
+        document.write("Do While繰り返し"+(i+1)+"回目<br>");
+        i=i+1;
+      // 条件が最後にあるため、do～while文の「最初の1回だけは必ずループが実行される」
+      }while(i<10);
+    </script>
+
+
+    <p> Brakeを入れて, whileを止める</p>
+
+      <script type="text/javascript">
+      var i=0;
+      while(i<100){
+        //「i==8」だったらbreakしてLoopを抜ける。
+        if(i==8){
+            break;
+        }
+        document.write("繰り返し"+(i+1)+"回目<br>");
+        i=i+1;
+      }
+    </script>
+
+
+    <p> Loopで特定処理をSKIPする <br>
+    処理をスキップするときは「continue」を使います。
+    </P>
+
+      <script type="text/javascript">
+      for(var i=0;i<10;i++){
+        //「i<5」のときは、「continue」より後の処理がスキップ
+        if(i<5){
+            continue;
+        }
+        document.write("繰り返し"+(i+1)+"回目<br>");
+      }
+      </script>
+ 
+
+  
+    
+    <p> Loop処理の確認(応用)</p>
+
+
+    <script type="text/javascript">
+      var i=0;
+      while(i<100){
+        if(i==8){
+          //break;
+          //breakの代わりにiに100を代入して処理を停止。Elseで1-8までを表示
+          i=100;
+        } else {
+        document.write("繰り返し"+(i+1)+"回目<br>");
+        i=i+1;
+        }
+      }  
+    </script>
+
+
+  </body>
+</html>
