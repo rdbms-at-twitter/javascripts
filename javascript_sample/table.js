@@ -53,16 +53,19 @@ Vue.component('demo-grid', {
 })
 
 // bootstrap the demo
+const URL = 'http://192.168.56.200/tables/data.json';
+
   var demo = new Vue({
   el: '#demo',
   data: {
     searchQuery: '',
     gridColumns: ['name', 'point','country'],
-    gridData: [
-      { name: '佐藤', point: 90, country: '日本'},
-      { name: '山田', point: 78, country: '日本'},
-      { name: '田中', point: 95, country: '日本'},
-      { name: '杉山', point: 85, country: '日本'}
-    ]
-  }
+    gridData: []
+    },
+      mounted() {
+      axios.get(URL).then(response => {this.gridData = response.data}) 
+                }
 })
+
+
+

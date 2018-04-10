@@ -1,6 +1,6 @@
 [
-{ name: "佐藤", point: 90, country: "日本"},
-{ name: "山田", point: 78, country: "日本"},
-{ name: "田中", point: 95, country: "日本"},
-{ name: "杉山", point: 85, country: "日本"}
+{ "name": "菴占陸", "point": 90, "country": "譌･譛ｬ"},
+{ "name": "螻ｱ逕ｰ", "point": 78, "country": "譌･譛ｬ"},
+{ "name": "逕ｰ荳ｭ", "point": 95, "country": "譌･譛ｬ"},
+{ "name": "譚牙ｱｱ", "point": 85, "country": "譌･譛ｬ"}
 ]
